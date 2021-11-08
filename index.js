@@ -7,7 +7,19 @@ const { MongoClient } = require('mongodb');
 
 const port = process.env.PORT || 5000;
 
-const serviceAccount = require('./doctors-portal-firebase-adminsdk.json');
+const serviceAccount = {
+    "type": "service_account",
+    "project_id": "doctors-portal-b83fa",
+    "private_key_id": "af11c97063f3e4ea1499e5155d3eacda130c2acb",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCU3zIv1VuTpneE\nXEyOvrzvPFzell+Q+LXujmeUDKar0nk7R7JrpY/mUfUesvm9nPF+ioIFOmwGEagU\nB27wMqYt6g26hzUs2BuWqlwATgbmp+5fz30xnOU3oh2q5q+FZ4DWk9ZcI84HbXMU\nrDDvoP9y/4FAgiU+6pCa4acTlTaYDS5TrkuDcGxPuGQ0XGHESDKZgIWBzONNQEAQ\ntfEzpf4yGtkXAYe5SohxZDZkHI1tZUKb3mCCuOo1drAhMiaiQ+Rgc4Gg8Vc26E/0\nrtIhbwTrZLs4nj+1es3/dZETnI2XkusFiNZRj5gXR7BqtbJ6alIFw2mA8mM8NoOm\nmIxTcXmbAgMBAAECggEAQ4wiEWIVcyENCZl3gy04PLR+zuAb7INsyRkEFkDHPx74\nstUNN5qfeDmnpo4+krIrQOdHp2eiq/5G7Q+SXpocnKieIgxHLFnB6tLRe7Hrn6yC\nlCZo/6HYvy1nmKui6DzWUIYztQrp6KTYmoCmk5PRVDRqSQLEM4/qnNvWGySQ6Nwg\nm19WwHiAfaBi4xIAhCPqWjC83bGQXn+xckGzgMOlgZT9APP8DtzXmMeRcsz06vR7\nT74ZH3/O6SJHNq2D9Aia4SlKiHsRV6UKbMauBF95wm9OszmCv+ccHKhXD3Qpa2YO\nyNRDuRV88ZNQRv33MyIYQtlUZe6sWJ0PYFQC/jpSQQKBgQDRQor5/BVnQKyyZgPZ\nUwd6MRV7M/GV7tL5qjv4EJ1krnDdeaY7ImSBvBf7H7ad/27q5RRY/5rcfkdjGZb+\neZQatln98qkthjn5dt1pOxZQbyI3DPfj8NUY+74+uYkePL/6acGU1ULJVa5Yzr/l\nSCGbUp4f2TKwtk50g3MF9ws3NwKBgQC2H6urEKAXQd3Ag9owggUFSULTofa68eID\nyJfQew9u1koxbAkFoEHqbAY81LNII24O8rJCw2/AFn6SCC9q0H2FHvDY/7XK5d1c\nMTjVJDc/usl/Qj0AJ706HPQ996EHot6PgezAlB6caxe1L/uaOJvznA9BQld5KIDA\nBmXBKLL6vQKBgQC3BrWZioOJ6MZjzthk97sdg9rfBIKz+cwrtFp5UMbpLa3n+KON\nKzqvQj3TVlyaerSf3LdcVEw1uHll0xb/AoWoi3/QnrKb77+7Uty7UoPk3B8X+U7D\n3nv0OxOdtxeYC9h6BI/dRl4AzOEOKd8rglhqiutkvcsZRor+W456VCZKJwKBgBaI\nHIjxaZz2/SRQK7JMo6pfwfDE3O2L91ZYfs/AKcygnlU29HbJuN3zt2HXPsbx+y/G\nPt+bpjuxjL8sXBFu8diCV3HBURBlF9nMDSfxbxRnW35vB3T5daO26VCxTi7Pq5E9\nlbjNmmvno+s6oHoX/tNIv2pndsL6i9M192jKTDpRAoGBAJnIbwN/+By6RwszEfSD\nYUIMDFwwhTzFxFI1oDVZWufjFifs1XYwiEAS97YDV9sw8BQs88TgvFeGW6nvVIie\nvkX6TMEoFIieRC97oSrE/wukExv4EHGigpS9vHMcyjbpqnnvHo6QgGdHWsTLFoy8\n/fduB/6EJW/C4jLNYgRK2s/3\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-ug5j2@doctors-portal-b83fa.iam.gserviceaccount.com",
+    "client_id": "106960294926180228844",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ug5j2%40doctors-portal-b83fa.iam.gserviceaccount.com"
+  }
+  
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
