@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+
 const admin = require("firebase-admin");
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
+
 const port = process.env.PORT || 5000;
 
 const serviceAccount = require('./doctors-portal-firebase-adminsdk.json');
@@ -13,6 +15,7 @@ admin.initializeApp({
 });
 
 //middleware
+
 app.use(cors());
 app.use(express.json());
 
@@ -25,6 +28,7 @@ async function verifyToken( req, res, next ) {
         const token = req.headers.authorizaton.split( ' ')[1];
 
         try {
+
             const decodedUser = await admin.auth().verifyIdToken(token);
             req.decodedEmail = decodedUser.email;
         }
@@ -38,6 +42,7 @@ async function verifyToken( req, res, next ) {
 
 async function run(){
     try {
+        
         await client.connect();
         const database = client.db('doctors_portal');
         const appointmentsCollection = database.collection('appointments');
